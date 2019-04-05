@@ -1,5 +1,6 @@
 package com.ynov.dietynov;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    Button weighButton;
+    Button sizeButton;
+    Button receipesButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        weighButton= findViewById(R.id.weight);
+        weighButton.setOnClickListener(clickMyWeightListener);
+
+        sizeButton = findViewById(R.id.size);
+        sizeButton.setOnClickListener(clickSizesListener);
+
+        receipesButton = findViewById(R.id.receipes);
+        receipesButton.setOnClickListener(clickReceipiesListener);
     }
 
     @Override
@@ -98,4 +112,26 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private View.OnClickListener clickMyWeightListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, WeightActivity.class);
+            startActivity(intent);
+        }
+    };
+    private View.OnClickListener clickSizesListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, SizesActivity.class);
+            startActivity(intent);
+        }
+    };
+    private View.OnClickListener clickReceipiesListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ReceipesActivity.class);
+            startActivity(intent);
+        }
+    };
 }
