@@ -6,4 +6,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="my_weight">Mon poids</string>
+    <string name="my_size">Mes mensurations</string>
+    <string name="recipes">Mes recettes</string>
+    <string name="my_acccount">Mon compte</string>
+    <string name="home">Accueil</string>
 </resources>

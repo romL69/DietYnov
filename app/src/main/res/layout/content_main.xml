@@ -33,7 +33,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
                     android:background="@color/colorPrimary"
-                    android:text="Mon poids" />
+                    android:text="@string/my_weight" />
             </LinearLayout>
 
         </LinearLayout>
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="148dp"
                 android:background="#0E846E"
-                android:text="Mes mensurations" />
+                android:text="@string/my_size" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
-                android:text="Recettes" />
+                android:text="@string/recipes" />
         </LinearLayout>
 
     </LinearLayout>

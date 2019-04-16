@@ -23,10 +23,11 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
                 android:paddingTop="20dp"
-                android:text="Mon poids"
+                android:text="@string/my_weight"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp" />
+
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
