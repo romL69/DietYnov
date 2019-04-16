@@ -1,4 +1,4 @@
-package com.ynov.myprospects;
+package com.ynov.dietynov;
 
 import android.util.Log;
 
