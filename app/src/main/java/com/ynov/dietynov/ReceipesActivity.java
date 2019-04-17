@@ -31,6 +31,11 @@ public class ReceipesActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receipes_activity);
+        listRecipe = new ArrayList();
+        adapter = new RecipeAdapter(this, listRecipe);
+        GetRecipe task= new GetRecipe();
+        task.execute();
+        setListAdapter(adapter);
     }
 
     @Override
@@ -44,10 +49,6 @@ public class ReceipesActivity extends ListActivity {
         myIntent.putExtra("recipe", selectedRecipe);
         ReceipesActivity.this.startActivity(myIntent);
     }
-    public class RecipeAdapter extends ArrayAdapter<Recipe> {
-        public RecipeAdapter(Context context, List<Recipe> prospects) {
-            super(context, 0, prospects);
-        }
 
 
         public class GetRecipe extends AsyncTask<Void, Void, Void> {
@@ -67,18 +68,17 @@ public class ReceipesActivity extends ListActivity {
                 // Making a request to url and getting response
                 String jsonStr = sh.makeServiceCall("http://dev.audreybron.fr/flux/flux_recettes.json");
 
-                //Log.e("YNOV", "Response from url: " + jsonStr);
 
                 if (jsonStr != null) {
                     try {
-                        JSONArray jsonObj = new JSONArray(jsonStr);
+                        JSONObject jjson = new JSONObject(jsonStr);
+                        JSONArray jsonObj = jjson.getJSONArray("result");
 
-                        // looping through All Prospects
                         for (int i = 0; i < jsonObj.length(); i++) {
                             JSONObject c = jsonObj.getJSONObject(i);
 
                             String title = c.getString("title");
-                            int portion = c.getInt("portion");
+                            int portion = c.getInt("portions");
                             String picture = c.getString("picture_url");
 
                             JSONObject jsontime = c.getJSONObject("time");
@@ -176,18 +176,22 @@ public class ReceipesActivity extends ListActivity {
 
         }
 
+    public class RecipeAdapter extends ArrayAdapter<Recipe> {
+        public RecipeAdapter(Context context, List<Recipe> prospects) {
+            super(context, 0, prospects);
+        }
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             // Get the data item for this position
-            Recipe prospect = getItem(position);
+            Recipe recipe = getItem(position);
             // Check if an existing view is being reused, otherwise inflate the view
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_layout, parent, false);
             }
             // Lookup view for data population
-            TextView name = (TextView) convertView.findViewById(R.id.title);
+            TextView title = (TextView) convertView.findViewById(R.id.title);
             // Populate the data into the template view using the data object
-
+            title.setText(recipe.getTitle());
             // Return the completed view to render on screen
             return convertView;
         }

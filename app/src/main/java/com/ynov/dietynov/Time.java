@@ -1,6 +1,8 @@
 package com.ynov.dietynov;
 
-public class Time {
+import java.io.Serializable;
+
+public class Time implements Serializable {
     private int total;
     private int prep;
     private int baking;

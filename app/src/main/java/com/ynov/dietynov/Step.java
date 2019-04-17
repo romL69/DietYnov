@@ -1,6 +1,8 @@
 package com.ynov.dietynov;
 
-public class Step {
+import java.io.Serializable;
+
+public class Step implements Serializable {
     private int order;
     private String step;
 

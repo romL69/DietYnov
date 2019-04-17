@@ -1,6 +1,8 @@
 package com.ynov.dietynov;
 
-public class Nutrition {
+import java.io.Serializable;
+
+public class Nutrition implements Serializable {
     private float kcal;
     private float protein;
     private float fat;

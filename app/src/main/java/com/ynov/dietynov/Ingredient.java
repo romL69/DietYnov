@@ -1,6 +1,8 @@
 package com.ynov.dietynov;
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
     private int quantity;
     private String unit;
     private String name;
