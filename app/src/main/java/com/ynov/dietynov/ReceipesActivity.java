@@ -192,6 +192,8 @@ public class ReceipesActivity extends ListActivity {
             TextView title = (TextView) convertView.findViewById(R.id.title);
             // Populate the data into the template view using the data object
             title.setText(recipe.getTitle());
+
+
             // Return the completed view to render on screen
             return convertView;
         }
