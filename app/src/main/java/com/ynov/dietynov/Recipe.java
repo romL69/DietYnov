@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Recipe implements Serializable {
 
+
+    int id;
     private String title;
     private int portion;
     private String picture;
@@ -14,6 +16,14 @@ public class Recipe implements Serializable {
     private Nutrition nutrition;
 
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

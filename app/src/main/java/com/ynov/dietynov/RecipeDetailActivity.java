@@ -3,8 +3,10 @@ package com.ynov.dietynov;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -18,12 +20,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
     TextView ingredients;
     TextView steps;
     TextView nutritions;
+    Button favbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_view_activity);
         intent=getIntent();
+
         Recipe recipe =(Recipe) intent.getSerializableExtra("recipe");
 
         title = findViewById(R.id.title);
@@ -60,7 +64,23 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         new DownloadImageTask((ImageView) findViewById(R.id.recipe_image)).execute(recipe.getPicture());
 
+        favbutton=findViewById(R.id.favbutton);
+        favbutton.setOnClickListener(clickFavButtonListener);
+
 
 
     }
+
+    private View.OnClickListener clickFavButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Recipe recipe =(Recipe) intent.getSerializableExtra("recipe");
+
+
+            RecipeBDD recipeBdd = new RecipeBDD(getApplicationContext() );
+            recipeBdd.open();
+            recipeBdd.insertRecipe(recipe);
+            recipeBdd.close();
+        }
+    };
 }

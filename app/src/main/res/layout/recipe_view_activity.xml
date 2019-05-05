@@ -46,11 +46,24 @@
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
-                    <TextView
-                        android:id="@+id/portions"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="43dp"
-                        android:text="TextView" />
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/favbutton"
+                            android:layout_width="176dp"
+                            android:layout_height="match_parent"
+                            android:text="Favori" />
+
+                        <TextView
+                            android:id="@+id/portions"
+                            android:layout_width="188dp"
+                            android:layout_height="43dp"
+                            android:text="TextView" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -105,6 +118,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:text="TextView" />
+
                     </LinearLayout>
 
                 </LinearLayout>

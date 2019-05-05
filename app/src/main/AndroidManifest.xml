@@ -15,6 +15,8 @@
         <activity android:name=".ReceipesActivity"></activity>
         <activity android:name=".RecipeDetailActivity"></activity>
         <activity android:name=".MyAccountActivity"></activity>
+        <activity android:name=".MyRecipesActivity"></activity>
+
 
 
         <activity

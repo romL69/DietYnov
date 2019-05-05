@@ -28,7 +28,25 @@ public class MyAccountActivity extends AppCompatActivity {
         updateBut = findViewById(R.id.updatebutton);
         updateBut.setOnClickListener(updateListener);
 
+        edit_date=findViewById(R.id.birthdate);
+        edit_weight=findViewById(R.id.weight);
+        edit_size=findViewById(R.id.size);
+
+        edit_date.setText(prefs.getString("user_birthdate", ""));
+        edit_weight.setText(prefs.getString("user_weight", ""));
+        edit_size.setText(prefs.getString("user_size", ""));
+        if (prefs.getString("gender", "") == "male" )
+        {
+            radiobutton = findViewById(R.id.radio_man);
+            radiobutton.setChecked(true);
+        }
+        if (prefs.getString("gender", "") == "female" )
+        {
+            radiobutton = findViewById(R.id.radio_women);
+            radiobutton.setChecked(true);
+        }
     }
+
     private void userInfo() {
         SharedPreferences.Editor edit = prefs.edit();
         edit.putString("user_weight",edit_weight.getText().toString());
@@ -40,14 +58,12 @@ public class MyAccountActivity extends AppCompatActivity {
     }
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.radio_man:
                 if (checked)
-                    gender = "man";
+                    gender = "male";
                     break;
             case R.id.radio_women:
                 if (checked)
