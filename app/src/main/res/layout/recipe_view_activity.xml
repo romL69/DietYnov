@@ -13,79 +13,104 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="vertical">
+            android:layout_height="736dp">
 
-            <ImageView
-                android:id="@+id/recipe_image"
-                android:layout_width="match_parent"
-                android:layout_height="145dp"
-                tools:srcCompat="@tools:sample/avatars" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/title"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/portions"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:text="TextView" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/time"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:text="TextView" />
-            </LinearLayout>
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/recipe_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="139dp"
+                        tools:srcCompat="@tools:sample/avatars" />
 
-                <TextView
-                    android:id="@+id/ingredients"
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="149dp"
-                    android:text="TextView" />
-            </LinearLayout>
+                    android:layout_height="53dp"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
 
+                    <TextView
+                        android:id="@+id/portions"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:text="TextView" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/steps"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="405dp"
-                    android:text="TextView" />
-            </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="151dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/ingredients"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/steps"
+                            android:layout_width="match_parent"
+                            android:layout_height="232dp"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

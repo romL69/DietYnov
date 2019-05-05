@@ -30,7 +30,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         title.setText(recipe.getTitle());
 
         portions = findViewById(R.id.portions);
-        portions.setText("Nombre de portins : " + recipe.getPortion());
+        portions.setText("Nombre de portions : " + recipe.getPortion());
 
         time = findViewById(R.id.time);
         time.setText("Préparation : " + recipe.getTime().getPrep() + " min. Cuisson : " + recipe.getTime().getBaking() + " min. Total : " + recipe.getTime().getTotal());
@@ -53,6 +53,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
         }
         steps =findViewById(R.id.steps);
         steps.setText(step);
+
+        Nutrition nutri = recipe.getNutrition();
+        nutritions = findViewById(R.id.nutrition);
+        nutritions.setText("Valeurs nutritionnelles : " + nutri.getCarbohydrate() + " g de glucides, " + nutri.getSugar() + " g de sucre " + nutri.getFat() + " g de lipides" + nutri.getSat_fat() + " g de lipides saturés " + nutri.getSodium() + " g de sel " + nutri.getFiber() + " g de fibres"+ nutri.getKcal() + " kcal");
 
         new DownloadImageTask((ImageView) findViewById(R.id.recipe_image)).execute(recipe.getPicture());
 
